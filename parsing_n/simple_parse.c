@@ -19,7 +19,7 @@
 	}*/
 int	check_walls_bis(t_game *game, char *map, int index, int k)
 {
-	if (index == game->height - 1 && map[k] == '0')
+	if (index == game->height && map[k] == '0')
 		return (0);
 	if ((index != 0 && ((game->map[index - 1][k] >= 9
 				&& game->map[index - 1][k] <= 13)

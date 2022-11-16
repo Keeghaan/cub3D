@@ -6,7 +6,7 @@
 /*   By: jcourtoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:53:31 by jcourtoi          #+#    #+#             */
-/*   Updated: 2022/11/16 16:14:37 by jcourtoi         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:59:21 by jcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,7 @@ void			my_mlx_pixel_put(t_pic *pic, int x, int y, int color);
 int				get_pixel(t_tex *tex, int x, int y);
 int				check_contour_t(char **map, int i);
 int				real_line_is_it(t_game *game, int j);
-int				is_real_line(char *map);
+//int				is_real_line(char *map);
 //INIT
 int				init_struct(t_game *game, char *file);
 int				get_mapsize(t_game *game);

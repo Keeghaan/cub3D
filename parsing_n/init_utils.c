@@ -6,7 +6,7 @@
 /*   By: nboratko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:39:29 by nboratko          #+#    #+#             */
-/*   Updated: 2022/11/16 16:36:24 by jcourtoi         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:00:18 by jcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,17 @@ int	get_mapsize(t_game *game)
 	return (get_next_line(-1), close(fd), 1);
 }
 
-int	is_real_line(char *map)
+int	is_real_line(t_game *game, char *map, int test, int j)
 {
 	int	i;
 
 	i = 0;
 	while (map[i] && ((map[i] >= 9 && map[i] <= 13) || map[i] == ' '))
 		i++;
-	if (!map[i])
-		return (0);
+	if (!map[i] && test == -1)
+		return (free(game->map[j]), 0);
+	else if (!map[i] && test == 42)
+		return (real_line_is_it(game, j));
 	return (1);
 }
 
@@ -70,6 +72,7 @@ static int	get_actual_map(t_game *game, int fd)
 {
 	int	j;
 	int	test;
+	int	var;
 
 	j = 0;
 	test = -1;
@@ -78,11 +81,13 @@ static int	get_actual_map(t_game *game, int fd)
 		return (get_next_line(-1), printf("Error\nNothing to read\n"), 0);
 	while (game->map[j])
 	{
-		if (!is_real_line(game->map[j]) && test == -1)
-			free(game->map[j]);
-		else if (!is_real_line(game->map[j]) && test == 1)
-			return (real_line_is_it(game, j));
-		else
+		var = is_real_line(game, game->map[j], test, j);
+		//	free(game->map[j]);
+	//	else if (!is_real_line(game->map[j], &test))
+	//		return (real_line_is_it(game, j));
+		if (!var && test == 1)
+			test = 42;
+		if (var == 1)
 		{
 			test = 1;
 			j++;
