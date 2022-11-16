@@ -6,7 +6,7 @@
 /*   By: nboratko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:39:29 by nboratko          #+#    #+#             */
-/*   Updated: 2022/11/16 19:00:18 by jcourtoi         ###   ########.fr       */
+/*   Updated: 2022/11/16 19:07:34 by jcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int	is_real_line(t_game *game, char *map, int test, int j)
 		i++;
 	if (!map[i] && test == -1)
 		return (free(game->map[j]), 0);
-	else if (!map[i] && test == 42)
-		return (real_line_is_it(game, j));
+//	else if (!map[i] && test == 42)
+//		return (real_line_is_it(game, j));
 	return (1);
 }
 
@@ -85,8 +85,8 @@ static int	get_actual_map(t_game *game, int fd)
 		//	free(game->map[j]);
 	//	else if (!is_real_line(game->map[j], &test))
 	//		return (real_line_is_it(game, j));
-		if (!var && test == 1)
-			test = 42;
+	//	if (!var && test == 1)
+	//		test = 42;
 		if (var == 1)
 		{
 			test = 1;
