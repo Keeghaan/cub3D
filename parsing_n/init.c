@@ -6,7 +6,7 @@
 /*   By: nboratko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:43:16 by nboratko          #+#    #+#             */
-/*   Updated: 2022/11/16 18:38:30 by jcourtoi         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:52:53 by jcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	init_struct(t_game *game, char *file)
 
 void	get_dir(t_game *game)
 {
-	if (game->start == 'N')
+	if (game->start == 'S')
 		game->rc.dir.y = -1;
-	else if (game->start == 'S')
+	else if (game->start == 'N')
 		game->rc.dir.y = 1;
 	else if (game->start == 'E')
 		game->rc.dir.x = 1;

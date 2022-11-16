@@ -6,7 +6,7 @@
 /*   By: jcourtoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:50:27 by jcourtoi          #+#    #+#             */
-/*   Updated: 2022/11/16 18:34:57 by jcourtoi         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:52:32 by jcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	ray_casting(t_game *game)
 		get_wall_x_and_tex(game);
 		if (game->img.id == 0)
 			draw_column(game, j, game->img.east);
-		else if (game->img.id == 3)
+		else if (game->img.id == 2)
 			draw_column(game, j, game->img.north);
 		else if (game->img.id == 1)
 			draw_column(game, j, game->img.west);
